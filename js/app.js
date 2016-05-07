@@ -42,17 +42,18 @@ var Player = function(x, y) {
 
 //the If Statement checks if the player reaches water & sets the player to initial starting location after 0.5 sec
 Player.prototype.update = function(dt) {
-    if (player.y <= -9) {
-        player.reset();
+    if (this.y <= -9) {
+        this.reset();
     }
 };
 
 //reset function sets the player to initial starting location after 0.5 sec
 Player.prototype.reset = function() {
+    var that = this;
     setTimeout(function(){
-        player.y = 405;
-        player.x = 200;      
-    }, 500);
+        that.y = 405;
+        that.x = 200;      
+    }, 250);
 }
 
 // The player on the screen is drawn, required method for game
